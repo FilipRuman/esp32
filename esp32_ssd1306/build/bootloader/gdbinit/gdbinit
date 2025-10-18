@@ -1,0 +1,2 @@
+source /home/f/git/esp_tests/oled/build/bootloader/gdbinit/symbols
+source /home/f/git/esp_tests/oled/build/bootloader/gdbinit/connect
