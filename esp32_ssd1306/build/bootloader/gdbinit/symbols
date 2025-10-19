@@ -22,4 +22,4 @@ set confirm off
 set confirm on
 
 # Load application symbols
-file /home/f/git/esp_tests/oled/build/bootloader/bootloader.elf
+file /home/f/git/esp32/esp32_ssd1306/build/bootloader/bootloader.elf

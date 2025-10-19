@@ -1,2 +1,2 @@
-source /home/f/git/esp_tests/oled/build/gdbinit/symbols
-source /home/f/git/esp_tests/oled/build/gdbinit/connect
+source /home/f/git/esp32/esp32_ssd1306/build/gdbinit/symbols
+source /home/f/git/esp32/esp32_ssd1306/build/gdbinit/connect

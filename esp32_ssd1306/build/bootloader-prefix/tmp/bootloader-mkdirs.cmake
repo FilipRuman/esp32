@@ -10,18 +10,18 @@ if(NOT EXISTS "/nix/store/3kwgdiamcz3g9z6889bir2lqp0sd6paz-esp-idf-v5.5.1/compon
   file(MAKE_DIRECTORY "/nix/store/3kwgdiamcz3g9z6889bir2lqp0sd6paz-esp-idf-v5.5.1/components/bootloader/subproject")
 endif()
 file(MAKE_DIRECTORY
-  "/home/f/git/esp_tests/oled/build/bootloader"
-  "/home/f/git/esp_tests/oled/build/bootloader-prefix"
-  "/home/f/git/esp_tests/oled/build/bootloader-prefix/tmp"
-  "/home/f/git/esp_tests/oled/build/bootloader-prefix/src/bootloader-stamp"
-  "/home/f/git/esp_tests/oled/build/bootloader-prefix/src"
-  "/home/f/git/esp_tests/oled/build/bootloader-prefix/src/bootloader-stamp"
+  "/home/f/git/esp32/esp32_ssd1306/build/bootloader"
+  "/home/f/git/esp32/esp32_ssd1306/build/bootloader-prefix"
+  "/home/f/git/esp32/esp32_ssd1306/build/bootloader-prefix/tmp"
+  "/home/f/git/esp32/esp32_ssd1306/build/bootloader-prefix/src/bootloader-stamp"
+  "/home/f/git/esp32/esp32_ssd1306/build/bootloader-prefix/src"
+  "/home/f/git/esp32/esp32_ssd1306/build/bootloader-prefix/src/bootloader-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "/home/f/git/esp_tests/oled/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
+    file(MAKE_DIRECTORY "/home/f/git/esp32/esp32_ssd1306/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "/home/f/git/esp_tests/oled/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "/home/f/git/esp32/esp32_ssd1306/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
 endif()
