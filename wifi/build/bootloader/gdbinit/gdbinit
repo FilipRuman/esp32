@@ -1,2 +1,0 @@
-source /home/f/git/esp32/wif/build/bootloader/gdbinit/symbols
-source /home/f/git/esp32/wif/build/bootloader/gdbinit/connect
