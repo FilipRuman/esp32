@@ -5,6 +5,7 @@
 #include "freertos/event_groups.h"
 #include "freertos/task.h"
 #include "nvs_flash.h"
+#include "sdkconfig.h"
 #include <stdint.h>
 
 #include "unistd.h"
@@ -92,8 +93,8 @@ esp_err_t connect_wifi() {
   wifi_config_t wifi_config = {
       .sta =
           {
-              .ssid = "ssid",
-              .password = "pass",
+              .ssid = CONFIG_WIFI_SSID,
+              .password = CONFIG_WIFI_PASSWORD,
               .threshold.authmode = WIFI_AUTH_WPA2_PSK,
               .pmf_cfg = {.capable = true, .required = false},
           },
