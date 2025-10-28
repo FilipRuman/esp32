@@ -16,7 +16,7 @@ void start_tcp(uint32_t port, int *socket_id, char *addr_str) {
   int addr_family = AF_INET;     // Define address family as Ipv4
   int ip_protocol = IPPROTO_TCP; // Define protocol as TCP
   *socket_id = socket(addr_family, SOCK_STREAM, ip_protocol);
-  if (socket_id < 0) {
+  if (*socket_id < 0) {
     ESP_LOGE(TAG, "Unable to create socket: errno %d", errno);
     return;
   }
@@ -44,6 +44,8 @@ void on_valid_data_input(char *buffer, int bytes_received, int buffer_len) {
 
 static int client_socket;
 void send_data(void *data_ptr, int size) {
+
+  ESP_LOGI(TAG, "send_data: %s", data_ptr);
   send(client_socket, data_ptr, size, 0);
 }
 
@@ -77,10 +79,7 @@ void tcp_loop(int socket_id, char *addr_str) {
       bytes_received = recv(client_socket, rx_buffer, sizeof(rx_buffer) - 1, 0);
       ESP_LOGI(TAG, "Received Data");
 
-      char *data = "Receved\n";
-      send_data(data, strlen(data));
-
-      // Error occured during receiving
+      // Error occurred during receiving
       if (bytes_received < 0) {
         ESP_LOGI(TAG, "Waiting for data");
         vTaskDelay(100 / portTICK_PERIOD_MS);

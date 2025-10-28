@@ -2,6 +2,7 @@
 #include "esp_log.h"
 #include "esp_netif_types.h"
 #include "esp_wifi.h"
+#include "esp_wifi_types_generic.h"
 #include "freertos/event_groups.h"
 #include "freertos/task.h"
 #include "nvs_flash.h"
@@ -90,12 +91,14 @@ esp_err_t connect_wifi() {
       &got_ip_event_instance));
 
   /** START THE WIFI DRIVER **/
+
+  wifi_scan_threshold_t treshold = {.authmode = WIFI_AUTH_WPA2_PSK};
   wifi_config_t wifi_config = {
       .sta =
           {
               .ssid = CONFIG_WIFI_SSID,
               .password = CONFIG_WIFI_PASSWORD,
-              .threshold.authmode = WIFI_AUTH_WPA2_PSK,
+              .threshold = treshold,
               .pmf_cfg = {.capable = true, .required = false},
           },
   };
